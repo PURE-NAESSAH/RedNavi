@@ -15,6 +15,12 @@ static const struct rn_asic_board kNavi32Boards[] = {
     {0, nullptr, 0, nullptr, 0, {0, 0, 0, 0, 0}},
 };
 
+// Strix Halo. Verified on the AMD Radeon 8060S (docs/logs/strix-halo/).
+static const struct rn_asic_board kStrixHaloBoards[] = {
+    {0x1586, "AMD Radeon 8060S", 98304, nullptr, 0, {0, 0, 0, 0, 0}},
+    {0, nullptr, 0, nullptr, 0, {0, 0, 0, 0, 0}},
+};
+
 static const struct rn_asic kAsics[] = {
     {
         "Navi 32",
@@ -26,6 +32,16 @@ static const struct rn_asic kAsics[] = {
         "gc_regs.h (gc_11_0_3) mmhub_regs.h (mmhub_3_0_0) osssys_regs.h (osssys_6_0_0) nbio_regs.h (nbio_4_3_0) dcn_reglist.h (dcn_3_2_0)",
         "linux_info_navi32.h",
         "dcn_replay.h (docs/logs/linux-reference/dcn_pipe_linux.txt, 1920x1080 at 60 Hz on DP)",
+    },
+    {
+        "Strix Halo",
+        {11, 5, 1}, {3, 5, 1}, {14, 0, 1}, {14, 0, 1}, {6, 1, 1},
+        kStrixHaloBoards,
+        nullptr,
+        "",
+        "",
+        "",
+        "",
     },
 };
 

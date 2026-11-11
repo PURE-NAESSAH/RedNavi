@@ -2920,7 +2920,12 @@ int RedNaviProbe::createVramBo(uint32_t size, bool visible) {
     size = (size + 4095u) & ~4095u;
     VramPool &pool = visible ? visPool : devPool;
     uint64_t off = 0;
-    if (!pool.alloc(size, &off)) return -1;
+    if (!pool.alloc(size, &off)) {
+        if (pci && pci->configRead16(kIOPCIConfigDeviceID) == 0x1586) {
+            return createHostBo(size, false, false);
+        }
+        return -1;
+    }
     IOMemoryDescriptor *vmd = nullptr;
     if (visible) {
         vmd = bar0Mem ? IODeviceMemory::withSubRange(bar0Mem, off, size) : nullptr;
