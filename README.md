@@ -80,6 +80,8 @@ Please post decoded output in an issue, together with your board and BIOS settin
 
 - **Helemen7** — Project founder, kernel display architecture, Metal/RADV translation layer.
 - **Frame121** — Navi 33 (RX 7600) Linux IP-discovery capture, directory layout parsing, and test evidence.
+- **PURE-NAESSAH** — Strix Halo / GFX1151 (Radeon 8060S) macOS IP-discovery capture, UMA probe adaptation, and test evidence.
+
 
 
 ## Contributing
